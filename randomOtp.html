@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .mainSection{
+      height: 200px;
+      width: 500px;
+      margin: 200px auto;
+      background-color: rgb(77, 77, 77);
+      border: 3px solid gray;
+      border-radius: 12px ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h1{
+      font-size: 100px;
+      letter-spacing: 26px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mainSection">
+    <h1></h1>
+  </div>
+  <script>
+    let h1=document.querySelector('h1');
+    h1.innerText=23859;
+    let interval=setInterval(()=>{
+      let otp='';
+      for(let i=0;i<5;i++){
+        let randNum=Math.random()*10;
+        randNum=Math.floor(randNum);
+        otp+=randNum;
+      }
+      h1.innerText=otp;
+    },5000)
+  </script>
+</body>
+</html>

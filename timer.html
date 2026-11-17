@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: black;
+      color: white;
+    }
+    .mainSection{
+      height: 300px;
+      width: 700px;
+      margin: 150px auto;
+      border: 2px solid gray;
+      border-radius: 12px;
+    }
+    .headingSec{
+      height: 100px;
+      width: 200px;
+      margin-left: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 70px;
+    }
+    .buttonsSection{
+      height: 100px;
+      width: 500px;
+      margin-left: 140px;
+    }
+    h1{
+      font-size: 90px;
+    }
+    button{
+      height: 30px;
+      width: 140px;
+      border: 2px solid gray;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="mainSection">
+    <div class="headingSec">
+      <h1>0</h1>
+    </div>
+    <div class="buttonsSection">
+      <button class="start">Start</button>
+      <button class="reset">Reset</button>
+      <button class="pause">Pause</button>
+    </div>
+  </div>
+
+  <script>
+    let nowTime=document.querySelector('h1');
+    let startBtn=document.querySelector('.start');
+    let resetBtn=document.querySelector('.reset');
+    let pauseBtn=document.querySelector('.pause');
+
+    currentTime=0;
+    let interval;
+    startBtn.addEventListener('click',()=>{
+      if(interval) return;
+      interval=setInterval(()=>{
+        currentTime++;
+        nowTime.innerText=currentTime;
+      },1000)
+    })
+
+    resetBtn.addEventListener('click',()=>{
+      clearInterval(interval);
+      interval=null;
+      currentTime=0;
+      nowTime.innerText=currentTime;
+    })
+
+    pauseBtn.addEventListener('click',()=>{
+      clearInterval(interval);
+      interval=null;
+      //nowTime.innerText=currentTime;
+    })
+  </script>
+</body>
+</html>
